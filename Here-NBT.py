@@ -29,13 +29,13 @@ def ReadPos(server, name):
     Dim = str(nbtFile["Dimension"])
     Command = '{\"text\":\"[x:' + str(int(X)) + ', y:' + str(int(Y)) + ' ,z:' + str(int(Z)) + ']\"}'
     if Dim == 'minecraft:overworld':
-        NetherPos = '(x:{} ,y:{} ,z:{})'.format(int(X/8), int(Y), int(Z/8))
-        server.execute('tellraw @a ' + '["",{},{}," ",{}," §7-> ",{},{}," ","{}"]'.format(Color[Dim], Text[Dim], Command, Color["minecraft:the_nether"], Text["minecraft:the_nether"], NetherPos))
+        NetherPos = '(x:{},y:{},z:{})'.format(int(X/8), int(Y), int(Z/8))
+        server.execute('tellraw @a ' + '["§e{} ","@ ",{},{}," ",{}," §7-> ",{},{},"{}"]'.format(name, Color[Dim], Text[Dim], Command, Color["minecraft:the_nether"], Text["minecraft:the_nether"], NetherPos))
     if Dim == 'minecraft:the_nether':
-        OverworldPos = '(x:{} ,y:{} ,z:{})'.format(int(X*8), int(Y), int(Z*8))
-        server.execute('tellraw @a ' + '["",{},{}," ",{}," §7-> ",{},{}," ","{}"]'.format(Color[Dim], Text[Dim], Command, Color["minecraft:overworld"], Text["minecraft:overworld"], OverworldPos))
+        OverworldPos = '(x:{},y:{},z:{})'.format(int(X*8), int(Y), int(Z*8))
+        server.execute('tellraw @a ' + '["§e{} ","@ ",{},{}," ",{}," §7-> ",{},{},"{}"]'.format(name, Color[Dim], Text[Dim], Command, Color["minecraft:overworld"], Text["minecraft:overworld"], OverworldPos))
     if Dim == 'minecraft:the_end':
-        server.execute('tellraw @a ' + '["",{},{}," ",{}]'.format(Color[Dim], Text[Dim], Command))
+        server.execute('tellraw @a ' + '["§e{} ","@ ",{},{}," ",{}]'.format(name, Color[Dim], Text[Dim], Command))
     if not HIGHLIGHT_TIME == 0:
         server.execute('effect give {} minecraft:glowing {} 0 true'.format(name, HIGHLIGHT_TIME))
 
