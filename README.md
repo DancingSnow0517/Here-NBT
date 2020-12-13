@@ -2,7 +2,7 @@
 
 一个[MCDReforged](https://github.com/Fallen-Breath/MCDReforged)插件
 
-Here的全选版本，不再依赖``data get``
+Here的全新版本，不再依赖``data get``
 
 ## 安装
 
