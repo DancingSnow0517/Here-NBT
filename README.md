@@ -8,6 +8,6 @@ Here的全新版本，不再依赖``data get``
 
 下载``Here-NBT.py``放入``plugin``文件夹
 
-使用```pip install nbt```来安装所需模块
+使用```pip install nbtlib```来安装所需模块
 
 重载MCDR
